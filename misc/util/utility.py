@@ -20,13 +20,14 @@ def construct_linked_list(iter):
     return head
 
 
-def print_linked_list(head):
+def print_linked_list(head, consider_head=False):
     """
     Prints the linked list. Assumes "head" is a dummy node. Prints from the next value of head
     :param head: Dummy Head node
+    :param consider_head: If True, consider head as first node, else head.next
     :return: None
     """
-    curr = head.next
+    curr = head if consider_head else head.next
     res = ""
     while curr:
         res += str(curr.val)
